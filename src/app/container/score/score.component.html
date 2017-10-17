@@ -1,0 +1,10 @@
+<h2>
+  Your Score: {{score}}
+
+</h2>
+
+<h4 class="text-danger " *ngIf="score < 20 && score != null">Good Job</h4>
+<h4 class="text-warning " *ngIf="score >= 20 && score < 50">A Decent Start!</h4>
+<h4 *ngIf="score >= 50 && score < 100">Doing Good!</h4>
+<h4 class="text-success" *ngIf="score >= 100 && score < 200">Great Job</h4>
+<h4 class="text-info" *ngIf="score > 200">Github Elite</h4>

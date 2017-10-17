@@ -1,0 +1,21 @@
+<div class="main container">
+  <div class="row">
+    <div class="col">
+      <form (submit)="githubUsername()" name="formData">
+        <h4> Github Username: <input class="form-control" type="text" required  minlength="1" name="username" [(ngModel)]="username"  #uname='ngModel'><br><br>
+          <!-- <p class="text-danger" *ngIf="uname.dirty && !uname.valid">Username is required </p> -->
+            <button *ngIf="uname.dirty && uname.valid" type="submit" class="btn btn-primary btn-sm">Calculate github score</button>
+              <button *ngIf="!uname.valid" type="submit" disabled  class="btn btn-primary btn-sm">Calculate github score</button>
+         </h4>
+
+
+      </form>
+      <h4 *ngIf="userExists">User exist! </h4>
+      <h4 *ngIf="!userExists && username.dirt">User doesnt exist pick </h4>
+    </div>
+    <div class="col">
+      <app-score [score]="score"></app-score>
+    </div>
+
+  </div>
+</div>
